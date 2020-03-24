@@ -3,12 +3,6 @@ const c = @import("c.zig");
 const warn = std.debug.warn;
 const panic = std.debug.panic;
 
-pub const rmask = 0xff000000;
-pub const gmask = 0x00ff0000;
-pub const bmask = 0x0000ff00;
-pub const amask = 0x000000ff;
-
-
 pub fn sdlAssertZero(ret: c_int) void {
     if (ret == 0) return;
     c.SDL_Log("assertion failed. %s", c.SDL_GetError());
